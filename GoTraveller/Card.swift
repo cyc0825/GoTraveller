@@ -20,6 +20,7 @@ struct Card: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Text("content")
+                .padding(.horizontal, 3)
             
             HStack(spacing:3){
                 Image(userimage)
@@ -36,11 +37,11 @@ struct Card: View {
                 Text(location)
             }
             .font(.footnote)
+            .padding(3)
         }
-        .frame(width: UIScreen.main.bounds.width * 4 / 9)
-        .padding(10)
+        .frame(width: UIScreen.main.bounds.width * 49 / 100)
         .background(Color.white)
-        .cornerRadius(8)
+        .cornerRadius(10)
     }
 }
 
