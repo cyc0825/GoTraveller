@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct GoTravellerApp: App {
+struct WorldieApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -16,7 +16,7 @@ struct GoTravellerApp: App {
     }
 }
 
-struct GoTravellerApp_Previews: PreviewProvider {
+struct WorldierApp_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             VStack{

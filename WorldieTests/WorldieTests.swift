@@ -1,14 +1,14 @@
 //
-//  GoTravellerTests.swift
-//  GoTravellerTests
+//  WorldieTests.swift
+//  WorldieTests
 //
-//  Created by 曹越程 on 2023/1/18.
+//  Created by 曹越程 on 2023/1/22.
 //
 
 import XCTest
-@testable import GoTraveller
+@testable import Worldie
 
-class GoTravellerTests: XCTestCase {
+class WorldieTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

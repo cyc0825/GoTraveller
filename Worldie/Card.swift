@@ -19,7 +19,7 @@ struct Card: View {
             Image(image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("content")
+            Text(text)
                 .padding(.horizontal, 3)
             
             HStack(spacing:3){

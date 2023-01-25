@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D30E1464297E461B0027586D /* WorldieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1463297E461B0027586D /* WorldieApp.swift */; };
+		D30E1466297E461B0027586D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1465297E461B0027586D /* ContentView.swift */; };
+		D30E1468297E46220027586D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1467297E46220027586D /* Assets.xcassets */; };
+		D30E146B297E46220027586D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E146A297E46220027586D /* Preview Assets.xcassets */; };
+		D30E1476297E46220027586D /* WorldieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1475297E46220027586D /* WorldieTests.swift */; };
+		D30E1481297E46220027586D /* WorldieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1480297E46220027586D /* WorldieUITests.swift */; };
+		D30E149C297E46A50027586D /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1491297E46A50027586D /* Tabbar.swift */; };
+		D30E149D297E46A50027586D /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D30E1492297E46A50027586D /* screenshot.png */; };
+		D30E149E297E46A50027586D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1493297E46A50027586D /* Assets.xcassets */; };
+		D30E149F297E46A50027586D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1495297E46A50027586D /* Preview Assets.xcassets */; };
+		D30E14A0297E46A50027586D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1496297E46A50027586D /* Extension.swift */; };
+		D30E14A1297E46A50027586D /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1497297E46A50027586D /* DiscoverView.swift */; };
+		D30E14A2297E46A50027586D /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D30E1498297E46A50027586D /* image1.jpeg */; };
+		D30E14A3297E46A50027586D /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1499297E46A50027586D /* SubView.swift */; };
+		D30E14A4297E46A50027586D /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E149A297E46A50027586D /* NearbyView.swift */; };
+		D30E14A5297E46A50027586D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E149B297E46A50027586D /* Card.swift */; };
+		D32E394B2980FCBF0040CBCA /* Card_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32E394A2980FCBF0040CBCA /* Card_Detail.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D30E1472297E46220027586D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D30E1458297E461B0027586D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D30E145F297E461B0027586D;
+			remoteInfo = Worldie;
+		};
+		D30E147D297E46220027586D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D30E1458297E461B0027586D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D30E145F297E461B0027586D;
+			remoteInfo = Worldie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D30E1460297E461B0027586D /* Worldie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worldie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30E1463297E461B0027586D /* WorldieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldieApp.swift; sourceTree = "<group>"; };
+		D30E1465297E461B0027586D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D30E1467297E46220027586D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D30E146A297E46220027586D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D30E146C297E46220027586D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30E1471297E46220027586D /* WorldieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30E1475297E46220027586D /* WorldieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldieTests.swift; sourceTree = "<group>"; };
+		D30E1477297E46220027586D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30E147C297E46220027586D /* WorldieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30E1480297E46220027586D /* WorldieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldieUITests.swift; sourceTree = "<group>"; };
+		D30E1482297E46220027586D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30E1491297E46A50027586D /* Tabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		D30E1492297E46A50027586D /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
+		D30E1493297E46A50027586D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D30E1495297E46A50027586D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D30E1496297E46A50027586D /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D30E1497297E46A50027586D /* DiscoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		D30E1498297E46A50027586D /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
+		D30E1499297E46A50027586D /* SubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		D30E149A297E46A50027586D /* NearbyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
+		D30E149B297E46A50027586D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D32E394A2980FCBF0040CBCA /* Card_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_Detail.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D30E145D297E461B0027586D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E146E297E46220027586D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E1479297E46220027586D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D30E1457297E461B0027586D = {
+			isa = PBXGroup;
+			children = (
+				D30E1462297E461B0027586D /* Worldie */,
+				D30E1474297E46220027586D /* WorldieTests */,
+				D30E147F297E46220027586D /* WorldieUITests */,
+				D30E1461297E461B0027586D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D30E1461297E461B0027586D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D30E1460297E461B0027586D /* Worldie.app */,
+				D30E1471297E46220027586D /* WorldieTests.xctest */,
+				D30E147C297E46220027586D /* WorldieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D30E1462297E461B0027586D /* Worldie */ = {
+			isa = PBXGroup;
+			children = (
+				D30E1493297E46A50027586D /* Assets.xcassets */,
+				D30E149B297E46A50027586D /* Card.swift */,
+				D32E394A2980FCBF0040CBCA /* Card_Detail.swift */,
+				D30E1497297E46A50027586D /* DiscoverView.swift */,
+				D30E1496297E46A50027586D /* Extension.swift */,
+				D30E1498297E46A50027586D /* image1.jpeg */,
+				D30E149A297E46A50027586D /* NearbyView.swift */,
+				D30E1494297E46A50027586D /* Preview Content */,
+				D30E1492297E46A50027586D /* screenshot.png */,
+				D30E1499297E46A50027586D /* SubView.swift */,
+				D30E1491297E46A50027586D /* Tabbar.swift */,
+				D30E1463297E461B0027586D /* WorldieApp.swift */,
+				D30E1465297E461B0027586D /* ContentView.swift */,
+				D30E1467297E46220027586D /* Assets.xcassets */,
+				D30E146C297E46220027586D /* Info.plist */,
+				D30E1469297E46220027586D /* Preview Content */,
+			);
+			path = Worldie;
+			sourceTree = "<group>";
+		};
+		D30E1469297E46220027586D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D30E146A297E46220027586D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D30E1474297E46220027586D /* WorldieTests */ = {
+			isa = PBXGroup;
+			children = (
+				D30E1475297E46220027586D /* WorldieTests.swift */,
+				D30E1477297E46220027586D /* Info.plist */,
+			);
+			path = WorldieTests;
+			sourceTree = "<group>";
+		};
+		D30E147F297E46220027586D /* WorldieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D30E1480297E46220027586D /* WorldieUITests.swift */,
+				D30E1482297E46220027586D /* Info.plist */,
+			);
+			path = WorldieUITests;
+			sourceTree = "<group>";
+		};
+		D30E1494297E46A50027586D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D30E1495297E46A50027586D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D30E145F297E461B0027586D /* Worldie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D30E1485297E46220027586D /* Build configuration list for PBXNativeTarget "Worldie" */;
+			buildPhases = (
+				D30E145C297E461B0027586D /* Sources */,
+				D30E145D297E461B0027586D /* Frameworks */,
+				D30E145E297E461B0027586D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Worldie;
+			productName = Worldie;
+			productReference = D30E1460297E461B0027586D /* Worldie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D30E1470297E46220027586D /* WorldieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D30E1488297E46220027586D /* Build configuration list for PBXNativeTarget "WorldieTests" */;
+			buildPhases = (
+				D30E146D297E46220027586D /* Sources */,
+				D30E146E297E46220027586D /* Frameworks */,
+				D30E146F297E46220027586D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D30E1473297E46220027586D /* PBXTargetDependency */,
+			);
+			name = WorldieTests;
+			productName = WorldieTests;
+			productReference = D30E1471297E46220027586D /* WorldieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D30E147B297E46220027586D /* WorldieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D30E148B297E46220027586D /* Build configuration list for PBXNativeTarget "WorldieUITests" */;
+			buildPhases = (
+				D30E1478297E46220027586D /* Sources */,
+				D30E1479297E46220027586D /* Frameworks */,
+				D30E147A297E46220027586D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D30E147E297E46220027586D /* PBXTargetDependency */,
+			);
+			name = WorldieUITests;
+			productName = WorldieUITests;
+			productReference = D30E147C297E46220027586D /* WorldieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D30E1458297E461B0027586D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					D30E145F297E461B0027586D = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					D30E1470297E46220027586D = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D30E145F297E461B0027586D;
+					};
+					D30E147B297E46220027586D = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = D30E145F297E461B0027586D;
+					};
+				};
+			};
+			buildConfigurationList = D30E145B297E461B0027586D /* Build configuration list for PBXProject "Worldie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D30E1457297E461B0027586D;
+			productRefGroup = D30E1461297E461B0027586D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D30E145F297E461B0027586D /* Worldie */,
+				D30E1470297E46220027586D /* WorldieTests */,
+				D30E147B297E46220027586D /* WorldieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D30E145E297E461B0027586D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30E146B297E46220027586D /* Preview Assets.xcassets in Resources */,
+				D30E149D297E46A50027586D /* screenshot.png in Resources */,
+				D30E149F297E46A50027586D /* Preview Assets.xcassets in Resources */,
+				D30E149E297E46A50027586D /* Assets.xcassets in Resources */,
+				D30E1468297E46220027586D /* Assets.xcassets in Resources */,
+				D30E14A2297E46A50027586D /* image1.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E146F297E46220027586D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E147A297E46220027586D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D30E145C297E461B0027586D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30E149C297E46A50027586D /* Tabbar.swift in Sources */,
+				D30E1466297E461B0027586D /* ContentView.swift in Sources */,
+				D30E14A1297E46A50027586D /* DiscoverView.swift in Sources */,
+				D30E14A3297E46A50027586D /* SubView.swift in Sources */,
+				D30E1464297E461B0027586D /* WorldieApp.swift in Sources */,
+				D30E14A4297E46A50027586D /* NearbyView.swift in Sources */,
+				D30E14A0297E46A50027586D /* Extension.swift in Sources */,
+				D30E14A5297E46A50027586D /* Card.swift in Sources */,
+				D32E394B2980FCBF0040CBCA /* Card_Detail.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E146D297E46220027586D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30E1476297E46220027586D /* WorldieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D30E1478297E46220027586D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30E1481297E46220027586D /* WorldieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D30E1473297E46220027586D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D30E145F297E461B0027586D /* Worldie */;
+			targetProxy = D30E1472297E46220027586D /* PBXContainerItemProxy */;
+		};
+		D30E147E297E46220027586D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D30E145F297E461B0027586D /* Worldie */;
+			targetProxy = D30E147D297E46220027586D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D30E1483297E46220027586D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D30E1484297E46220027586D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D30E1486297E46220027586D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Worldie/Preview Content\"";
+				DEVELOPMENT_TEAM = 528US555T2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Worldie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.Worldie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D30E1487297E46220027586D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Worldie/Preview Content\"";
+				DEVELOPMENT_TEAM = 528US555T2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Worldie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.Worldie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D30E1489297E46220027586D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 528US555T2;
+				INFOPLIST_FILE = WorldieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.WorldieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worldie.app/Worldie";
+			};
+			name = Debug;
+		};
+		D30E148A297E46220027586D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 528US555T2;
+				INFOPLIST_FILE = WorldieTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.WorldieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worldie.app/Worldie";
+			};
+			name = Release;
+		};
+		D30E148C297E46220027586D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 528US555T2;
+				INFOPLIST_FILE = WorldieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.WorldieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Worldie;
+			};
+			name = Debug;
+		};
+		D30E148D297E46220027586D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 528US555T2;
+				INFOPLIST_FILE = WorldieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyc0825.WorldieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Worldie;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D30E145B297E461B0027586D /* Build configuration list for PBXProject "Worldie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30E1483297E46220027586D /* Debug */,
+				D30E1484297E46220027586D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D30E1485297E46220027586D /* Build configuration list for PBXNativeTarget "Worldie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30E1486297E46220027586D /* Debug */,
+				D30E1487297E46220027586D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D30E1488297E46220027586D /* Build configuration list for PBXNativeTarget "WorldieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30E1489297E46220027586D /* Debug */,
+				D30E148A297E46220027586D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D30E148B297E46220027586D /* Build configuration list for PBXNativeTarget "WorldieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30E148C297E46220027586D /* Debug */,
+				D30E148D297E46220027586D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D30E1458297E461B0027586D /* Project object */;
+}
