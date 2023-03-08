@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Card: View {
+    // @Binding var UIimage: UIImage?
     var text = "content"
     var image = "image1"
     var userimage = "dio"

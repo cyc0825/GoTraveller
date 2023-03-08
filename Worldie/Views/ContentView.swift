@@ -13,40 +13,41 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 
+                // Heading Navigation
                 HStack{
                     
                     Button{
                         
                     }label: {
-                        Image(systemName: "message")
+                        Image(systemName: "calendar")
                     }
                     .foregroundColor(.black)
                     
                     Spacer()
                     
-                    Button{
+                    /*Button{
                         select = 0
                     }label: {
                         Text("Nearby")
                             .fontWeight(select == 0 ? .bold:.regular)
                             .foregroundColor(select == 0 ? .black: .gray)
-                    }
+                    }*/
                     
                     Button{
                         select = 1
                     }label: {
-                        Text("Discover")
+                        Text("My Stories")
                             .fontWeight(select == 1 ? .bold:.regular)
                             .foregroundColor(select == 1 ? .black: .gray)
                     }
                     
-                    Button{
+                    /*Button{
                         select = 2
                     }label: {
                         Text("Subscribe")
                             .fontWeight(select == 2 ? .bold:.regular)
                             .foregroundColor(select == 2 ? .black: .gray)
-                    }
+                    }*/
                     
                     Spacer()
                     
@@ -60,11 +61,11 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                    
+                // Main content
                 TabView(selection:$select){
                     
-                    NearbyView()
-                    .tag(0)
+                    //NearbyView()
+                    //.tag(0)
                     
                     DiscoverView()
                     .tag(1)

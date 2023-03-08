@@ -18,13 +18,13 @@ struct SubView: View {
         ScrollView{
             ScrollView(.horizontal, showsIndicators: false){
                 HStack{
+                    Spacer()
                     ForEach(Images){item in
                         VStack(spacing:0){
                             Image(item.idle)
                                 .toCircle(radius: 80)
                             Text(item.name)
                         }
-                        .padding()
                     }
                     Spacer()
                 }
@@ -35,6 +35,9 @@ struct SubView: View {
                     
                 }
                 Image("image1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width)
             }
         }
     }

@@ -25,15 +25,6 @@ struct WorldierApp_Previews: PreviewProvider {
                 TabView{
                     VStack{
                         HStack(alignment:.top){
-                            VStack{
-                            
-                                Card(text: "context", image: "image1", userimage: "dio", username: "dio", location: "10m")
-                                
-                            } // Left side cards
-                            
-                            VStack{
-                                Card(text: "context", image: "image2", userimage: "dio", username: "dio", location: "10m")
-                            } // Right side cards
                         }
                         Spacer()
                     }
