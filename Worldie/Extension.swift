@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 extension Image{
     func toCircle(radius:CGFloat) -> some View{
@@ -17,43 +18,52 @@ extension Image{
     }
 }
 
-class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @Binding var image: UIImage?
-    @Binding var isShown: Bool
-    init(image: Binding<UIImage?>, isShown: Binding<Bool>){
-        _image = image
-        _isShown = isShown
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            image = uiImage
-            isShown = false
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        isShown = false
-    }
-}
-
 struct ImagePicker: UIViewControllerRepresentable {
-    typealias UIViewControllerType = UIImagePickerController
-    typealias Coordinator = ImagePickerCoordinator
-    @Binding var image: UIImage?
+    
+    @Binding var image: [UIImage]
     @Binding var isShown: Bool
+    var any = PHPickerConfiguration(photoLibrary: .shared())
     var sourceType: UIImagePickerController.SourceType = .camera
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
         
     }
     
-    func makeCoordinator() ->ImagePicker.Coordinator {
-        return ImagePickerCoordinator(image: $image, isShown: $isShown)
+    func makeCoordinator() -> ImagePicker.ImagePickerCoordinator {
+        return ImagePicker.ImagePickerCoordinator(image: self)
     }
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
+    func makeUIViewController(context: Context) -> PHPickerViewController {
+        var configu = PHPickerConfiguration()
+        configu.selectionLimit = 0
+        configu.filter = any.filter
+        let picker = PHPickerViewController(configuration: configu)
         picker.delegate = context.coordinator
         return picker
+    }
+    
+    class ImagePickerCoordinator: NSObject, PHPickerViewControllerDelegate{
+        
+        var photo: ImagePicker
+        init(image: ImagePicker) {
+            photo = image
+        }
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            self.photo.isShown.toggle()
+            
+            for photo in results {
+                if photo.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                    photo.itemProvider.loadObject(ofClass: UIImage.self) {
+                        (images, err) in guard let photos = images else{
+                            print("\(String(describing: err?.localizedDescription))")
+                            return
+                        }
+                        self.photo.image.append(photos as! UIImage)
+                    }
+                }
+                else{
+                    print("no loaded")
+                }
+            }
+        }
     }
 }
