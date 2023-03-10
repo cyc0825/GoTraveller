@@ -12,6 +12,7 @@ struct Card_Detail: View {
     @State var comments = ""
     @State var dragvalues : CGFloat = 0
     @Binding var isshow: Bool
+    @Binding var showDetail: Bool
     var title = "How do I comment on this food "
     var content = "The answer is easy. Food is universal. Everybody has to eat! It’s as simple as that. So people want to find tasty, healthy food, the best places to eat, etc. It’s no wonder that everybody’s talking about food. \n\n In fact, The Daily Meal even claims that just talking about food might make you healthier. What do you think? \n\n In The Huffington Post, award-winning chef Marcus Samuelsson talks about how food cuts across cultures. Every culture in every country has its own cuisine (style of cooking) and this is what makes travel so fascinating. \n\n You not only get to enjoy the sights and sounds, but you also know there are always new and exciting food adventures waiting for you."
     var image = "image1"
@@ -24,6 +25,7 @@ struct Card_Detail: View {
                     Button{
                         withAnimation {
                             isshow.toggle()
+                            showDetail.toggle()
                         }
                     }label:{
                         Image(systemName: "chevron.backward")
@@ -74,16 +76,11 @@ struct Card_Detail: View {
                 // .background(Color.accentColor)
             }
             .background(Color.clear.matchedGeometryEffect(id: "background", in: namespace))
-            .scaleEffect( dragvalues == 0 ? 1 : dragvalues / 30)
-            .gesture(
-                DragGesture()
-                    .onChanged({ dragValue in dragvalues = dragValue.location.x})
-            )
         }
 }
 
 struct Card_Detail_Previews: PreviewProvider {
     static var previews: some View {
-        Card_Detail(isshow: Binding.constant(false))
+        Card_Detail(isshow: Binding.constant(false), showDetail: Binding.constant(true))
     }
 }

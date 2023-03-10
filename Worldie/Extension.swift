@@ -18,52 +18,12 @@ extension Image{
     }
 }
 
-struct ImagePicker: UIViewControllerRepresentable {
-    
-    @Binding var image: [UIImage]
-    @Binding var isShown: Bool
-    var any = PHPickerConfiguration(photoLibrary: .shared())
-    var sourceType: UIImagePickerController.SourceType = .camera
-    
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
-        
-    }
-    
-    func makeCoordinator() -> ImagePicker.ImagePickerCoordinator {
-        return ImagePicker.ImagePickerCoordinator(image: self)
-    }
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-        var configu = PHPickerConfiguration()
-        configu.selectionLimit = 0
-        configu.filter = any.filter
-        let picker = PHPickerViewController(configuration: configu)
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    class ImagePickerCoordinator: NSObject, PHPickerViewControllerDelegate{
-        
-        var photo: ImagePicker
-        init(image: ImagePicker) {
-            photo = image
-        }
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            self.photo.isShown.toggle()
-            
-            for photo in results {
-                if photo.itemProvider.canLoadObject(ofClass: UIImage.self) {
-                    photo.itemProvider.loadObject(ofClass: UIImage.self) {
-                        (images, err) in guard let photos = images else{
-                            print("\(String(describing: err?.localizedDescription))")
-                            return
-                        }
-                        self.photo.image.append(photos as! UIImage)
-                    }
-                }
-                else{
-                    print("no loaded")
-                }
-            }
-        }
+struct OvalTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(10)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(20)
+            .shadow(color: .gray, radius: 5)
     }
 }

@@ -15,22 +15,21 @@ struct Tabbar: View {
     @State private var showImagePicker: Bool = false
     @State private var userSwiping: Bool = false
     @State private var sourceType: UIImagePickerController.SourceType = .camera
-    @State var image: [UIImage] = []
-    @State var any = PHPickerConfiguration()
+    @State var image: [PhotosPickerItem] = []
+    @State var selectedImages: [Image] = []
+    @State var navigated = false
     
     var body: some View {
         VStack(){
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 4){
-                    ForEach(image, id: \.self) {
-                        photo in Image(uiImage: photo)
-                            .resizable()
-                            .frame(width: 400, height: 400)
-                    }
+            TabView {
+                ForEach(0..<selectedImages.count, id: \.self) { i in
+                    selectedImages[i]
+                        .resizable()
+                        .frame(width: 400, height: 400)
                 }
             }
-            //.offset(x: self.userSwiping ? self.offset: CGFloat(self.))
-            .frame(width: 400, alignment: .leading)
+            .tabViewStyle(PageTabViewStyle())
+            .frame(width: 400, height: 400)
             HStack(){
                 Spacer()
                 Button{
@@ -41,10 +40,8 @@ struct Tabbar: View {
                         .foregroundColor(selected == 0 ? .black: .gray)
                 }
                 Spacer()
-                
-                Button{
-                    self.showSheet = true
-                }label: {
+                PhotosPicker(selection: $image,
+                             matching: .images){
                     Image(systemName: "plus")
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
@@ -52,23 +49,19 @@ struct Tabbar: View {
                         .background(Color.accentColor)
                         .cornerRadius(10)
                 }
-                .onTapGesture {
-                }
-                .actionSheet(isPresented: $showSheet) {
-                    ActionSheet(title: Text("Select Photo"),
-                                message: Text("Choose"), buttons: [
-                                    .default(Text("Photo Library")){
-                                        self.showImagePicker = true
-                                        self.sourceType = .photoLibrary
-                                        self.any.filter = .images
-                                    },
-                                    .default(Text("Camera")){
-                                        self.showImagePicker = true
-                                        self.sourceType = .camera
-                                    },
-                                    .cancel()
-                                ])
-                }
+                 .onChange(of: image){ _ in
+                     Task {
+                         selectedImages.removeAll()
+                         for item in image {
+                             if let data = try? await item.loadTransferable(type: Data.self) {
+                                 if let uiImage = UIImage(data: data) {
+                                     let image = Image(uiImage: uiImage)
+                                     selectedImages.append(image)
+                                 }
+                             }
+                         }
+                     }
+                 }
                 Spacer()
                 
                 Button{
@@ -80,9 +73,6 @@ struct Tabbar: View {
                 }
                 Spacer()
                 
-            }
-            .sheet(isPresented: $showImagePicker){
-                ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
             }
             .padding(8)
             .background(Color.white)
