@@ -8,37 +8,25 @@
 import SwiftUI
 
 struct SubView: View {
-    var Images: [User] = [
-        User(name: "dio", idle: "dio"),
-        User(name: "dio", idle: "dio"),
-        User(name: "dio", idle: "dio"),
-        User(name: "dio", idle: "dio"),
-        User(name: "dio", idle: "dio")]
+    @State var isNotificationEnabled: Bool = false
+    @State var distance : Int = 100
     var body: some View {
-        ScrollView{
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack{
-                    Spacer()
-                    ForEach(Images){item in
-                        VStack(spacing:0){
-                            Image(item.idle)
-                                .toCircle(radius: 80)
-                            Text(item.name)
-                        }
+        NavigationView{
+            Form {
+                Section(header: Text("Distance Tracking Mode")) {
+                    Toggle(isOn: $isNotificationEnabled) {
+                        Text("Tracking:")
                     }
-                    Spacer()
+                }
+
+                Section(header: Text("Distance settings")) {
+
+                    Stepper(value: $distance, in: 10...1000) {
+                        Text("Categorize by \(distance) miles")
+                    }
                 }
             }
-            .frame(width: UIScreen.main.bounds.width)
-            VStack{
-                HStack{
-                    
-                }
-                Image("image1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width)
-            }
+            .navigationTitle(Text("Settings"))
         }
     }
 }

@@ -12,10 +12,9 @@ struct Card_Detail: View {
     @State var comments = ""
     @State var dragvalues : CGFloat = 0
     @Binding var isshow: Bool
-    @Binding var showDetail: Bool
     var title = "How do I comment on this food "
     var content = "The answer is easy. Food is universal. Everybody has to eat! It’s as simple as that. So people want to find tasty, healthy food, the best places to eat, etc. It’s no wonder that everybody’s talking about food. \n\n In fact, The Daily Meal even claims that just talking about food might make you healthier. What do you think? \n\n In The Huffington Post, award-winning chef Marcus Samuelsson talks about how food cuts across cultures. Every culture in every country has its own cuisine (style of cooking) and this is what makes travel so fascinating. \n\n You not only get to enjoy the sights and sounds, but you also know there are always new and exciting food adventures waiting for you."
-    var image = "image1"
+    var images: [Image] = []
     var userimage = "dio"
     var username = "username"
     var location = "location"
@@ -25,7 +24,6 @@ struct Card_Detail: View {
                     Button{
                         withAnimation {
                             isshow.toggle()
-                            showDetail.toggle()
                         }
                     }label:{
                         Image(systemName: "chevron.backward")
@@ -45,9 +43,23 @@ struct Card_Detail: View {
                 }
                 .font(.system(size: 18))
                 ScrollView{
-                    Image(image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    if(images.isEmpty){
+                        Image("image1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    else{
+                        TabView {
+                            ForEach(0..<images.count, id: \.self) { i in
+                                images[i]
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle())
+                        .frame(height: 400)
+                        
+                    }
                     Text(title)
                         .fontWeight(.bold)
                         .font(.system(size: 18))
@@ -81,6 +93,6 @@ struct Card_Detail: View {
 
 struct Card_Detail_Previews: PreviewProvider {
     static var previews: some View {
-        Card_Detail(isshow: Binding.constant(false), showDetail: Binding.constant(true))
+        Card_Detail(isshow: Binding.constant(false))
     }
 }

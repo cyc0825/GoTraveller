@@ -8,62 +8,116 @@
 import SwiftUI
 
 struct DiscoverView: View {
-    @State var isclick: Bool = true
-    @State var showDetail: Bool = false
+    @Namespace var namespace
+    @State var isclick : Bool = true
+    @State var isshow : Bool = false
+    @State var cardDetail: Card_Detail = Card_Detail(
+        isshow: Binding.constant(false),
+        title: "Enjoy Delicious Food...",
+        content: "1",
+        images: [],
+        userimage: "dio",
+        username: "dio",
+        location: "10m")
+    @State var cardDetailID: UUID = UUID()
+    @State var leftCards: [Card] = []
+    @State var rightCards: [Card] = []
+    
+    @Binding var cards: [Card]
     
     var body: some View {
         VStack{
-            ScrollView{
-                if(showDetail){
-                    Card(title: "Enjoy Delicious Food...",
-                         image: "image1",
-                         userimage: "dio",
-                         username: "dio",
-                         location: "10m",
-                         isshow: true,
-                         showDetail: $showDetail).padding(-2)
-                }
-                else{
-                    HStack(alignment:.top){
-                        VStack{
-                            Card(title: "Enjoy Delicious Food...",
-                                 image: "image1",
-                                 userimage: "dio",
-                                 username: "dio",
-                                 location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                            
-                            Card(title: "Lonely M...", image: "image3", userimage: "dio", username: "dio", location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                            
-                            Card(title: "Nice Cloud...", image: "image5", userimage: "dio", username: "dio", location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                            
-                            
-                            
-                        } // Left side cards
-                        
-                        VStack{
-                            Card(title: "High building", image: "image2", userimage: "dio", username: "dio", location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                            
-                            Card(title: "Love this place", image: "image4", userimage: "dio", username: "dio", location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                            
-                            Card(title: "Want to do some snowboarding...", image: "image6", userimage: "dio", username: "dio", location: "10m",
-                                 showDetail: $showDetail).padding(-2)
-                        } // Right side cards
+            if isshow {
+                cardDetail
+                    .matchedGeometryEffect(id: cardDetailID, in: namespace)
+            }
+            else {
+                ZStack{
+                    if(cards.isEmpty){
+                        Text("Your Story Starts Here")
+                            .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2, alignment: .center)
+                            .foregroundColor(Color.gray)
                     }
-                    Spacer()
+                    
+                    ScrollView{
+                        HStack(alignment:.top){
+                            /*if(cards.isEmpty){
+                             Text("Your Story Starts Here")
+                             .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height / 2, alignment: .center)
+                             .foregroundColor(Color.gray)
+                             }*/
+                            VStack{
+                                spaceholder()
+                                    .padding(-2)
+                                ForEach(0..<cards.count, id: \.self) {i in
+                                    if(i % 2 == 0){
+                                        cards[i]
+                                            .padding(-2)
+                                            .matchedGeometryEffect(id: cards[i].id, in: namespace)
+                                            .onTapGesture {
+                                                withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.8)) {
+                                                    isshow.toggle()
+                                                    cardDetail = Card_Detail(
+                                                        isshow: $isshow,
+                                                        title: cards[i].title,
+                                                        content: cards[i].context,
+                                                        images: cards[i].image,
+                                                        userimage: cards[i].userimage,
+                                                        username: cards[i].username,
+                                                        location: cards[i].location)
+                                                    cardDetailID = cards[i].id
+                                                    
+                                                }
+                                            }
+                                            .onLongPressGesture{
+                                                cards.remove(at: i)
+                                            }
+                                    }
+                                }
+                                
+                            } // Left side cards
+                            
+                            VStack{
+                                spaceholder()
+                                    .padding(-2)
+                                ForEach(0..<cards.count, id: \.self) {i in
+                                    if(i % 2 == 1){
+                                        cards[i]
+                                            .padding(-2)
+                                            .matchedGeometryEffect(id: cards[i].id, in: namespace)
+                                            .onTapGesture {
+                                                withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.8)) {
+                                                    isshow.toggle()
+                                                    cardDetail = Card_Detail(
+                                                        isshow: $isshow,
+                                                        title: cards[i].title,
+                                                        content: cards[i].context,
+                                                        images: cards[i].image,
+                                                        userimage: cards[i].userimage,
+                                                        username: cards[i].username,
+                                                        location: cards[i].location)
+                                                    cardDetailID = cards[i].id
+                                                    
+                                                }
+                                            }
+                                            .onLongPressGesture{
+                                                cards.remove(at: i)
+                                            }
+                                    }
+                                }
+                            } // Right side cards
+                        }
+                        Spacer()
+                    }
+                    .background(Color.gray.opacity(0.2).matchedGeometryEffect(id: "background", in: namespace))
                 }
             }
         }
-        
     }
 }
 
 struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DiscoverView()
+        DiscoverView(cards: Binding.constant([]))
     }
 }

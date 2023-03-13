@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		D30E1464297E461B0027586D /* WorldieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1463297E461B0027586D /* WorldieApp.swift */; };
 		D30E1466297E461B0027586D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1465297E461B0027586D /* ContentView.swift */; };
-		D30E1468297E46220027586D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1467297E46220027586D /* Assets.xcassets */; };
 		D30E146B297E46220027586D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E146A297E46220027586D /* Preview Assets.xcassets */; };
 		D30E1476297E46220027586D /* WorldieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1475297E46220027586D /* WorldieTests.swift */; };
 		D30E1481297E46220027586D /* WorldieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1480297E46220027586D /* WorldieUITests.swift */; };
 		D30E149C297E46A50027586D /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1491297E46A50027586D /* Tabbar.swift */; };
 		D30E149D297E46A50027586D /* screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D30E1492297E46A50027586D /* screenshot.png */; };
 		D30E149E297E46A50027586D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1493297E46A50027586D /* Assets.xcassets */; };
-		D30E149F297E46A50027586D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30E1495297E46A50027586D /* Preview Assets.xcassets */; };
 		D30E14A0297E46A50027586D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1496297E46A50027586D /* Extension.swift */; };
 		D30E14A1297E46A50027586D /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1497297E46A50027586D /* DiscoverView.swift */; };
 		D30E14A3297E46A50027586D /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E1499297E46A50027586D /* SubView.swift */; };
 		D30E14A4297E46A50027586D /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E149A297E46A50027586D /* NearbyView.swift */; };
 		D30E14A5297E46A50027586D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E149B297E46A50027586D /* Card.swift */; };
 		D32E394B2980FCBF0040CBCA /* Card_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32E394A2980FCBF0040CBCA /* Card_Detail.swift */; };
+		D34926BA29BB866A0020A43D /* spaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34926B929BB86690020A43D /* spaceholder.swift */; };
 		D36AA71729B7D3F60035B2F3 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36AA71629B7D3F60035B2F3 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +65,7 @@
 		D30E149A297E46A50027586D /* NearbyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
 		D30E149B297E46A50027586D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D32E394A2980FCBF0040CBCA /* Card_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_Detail.swift; sourceTree = "<group>"; };
+		D34926B929BB86690020A43D /* spaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceholder.swift; sourceTree = "<group>"; };
 		D36AA71629B7D3F60035B2F3 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +171,7 @@
 				D32E394A2980FCBF0040CBCA /* Card_Detail.swift */,
 				D30E1491297E46A50027586D /* Tabbar.swift */,
 				D30E149B297E46A50027586D /* Card.swift */,
+				D34926B929BB86690020A43D /* spaceholder.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -250,7 +251,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					D30E145F297E461B0027586D = {
 						CreatedOnToolsVersion = 12.1;
@@ -292,9 +293,7 @@
 			files = (
 				D30E146B297E46220027586D /* Preview Assets.xcassets in Resources */,
 				D30E149D297E46A50027586D /* screenshot.png in Resources */,
-				D30E149F297E46A50027586D /* Preview Assets.xcassets in Resources */,
 				D30E149E297E46A50027586D /* Assets.xcassets in Resources */,
-				D30E1468297E46220027586D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +321,7 @@
 				D30E149C297E46A50027586D /* Tabbar.swift in Sources */,
 				D30E1466297E461B0027586D /* ContentView.swift in Sources */,
 				D30E14A1297E46A50027586D /* DiscoverView.swift in Sources */,
+				D34926BA29BB866A0020A43D /* spaceholder.swift in Sources */,
 				D30E14A3297E46A50027586D /* SubView.swift in Sources */,
 				D30E1464297E461B0027586D /* WorldieApp.swift in Sources */,
 				D30E14A4297E46A50027586D /* NearbyView.swift in Sources */,
@@ -415,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
