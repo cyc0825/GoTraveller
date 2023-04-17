@@ -9,21 +9,22 @@ import SwiftUI
 
 struct DiscoverView: View {
     @Namespace var namespace
+    
     @State var isclick : Bool = true
     @State var isshow : Bool = false
     @State var cardDetail: Card_Detail = Card_Detail(
+        card: Binding.constant(Card()),
+        cards: Binding.constant([]),
+        index: 0,
         isshow: Binding.constant(false),
-        title: "Enjoy Delicious Food...",
-        content: "1",
-        images: [],
-        userimage: "dio",
-        username: "dio",
-        location: "10m")
+        isShow: Binding.constant(false))
     @State var cardDetailID: UUID = UUID()
     @State var leftCards: [Card] = []
     @State var rightCards: [Card] = []
-    
+    @State var card = Card()
     @Binding var cards: [Card]
+    @Binding var isShow: Bool
+    @Binding var deletedCards: [Card]
     
     var body: some View {
         VStack{
@@ -57,20 +58,23 @@ struct DiscoverView: View {
                                             .onTapGesture {
                                                 withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.8)) {
                                                     isshow.toggle()
+                                                    isShow.toggle()
+                                                    card = cards[i]
+                                                    cardDetailID = card.id
                                                     cardDetail = Card_Detail(
+                                                        card: $card,
+                                                        cards: $cards,
+                                                        index: i,
                                                         isshow: $isshow,
-                                                        title: cards[i].title,
-                                                        content: cards[i].context,
-                                                        images: cards[i].image,
-                                                        userimage: cards[i].userimage,
-                                                        username: cards[i].username,
-                                                        location: cards[i].location)
-                                                    cardDetailID = cards[i].id
+                                                        isShow: $isShow)
                                                     
                                                 }
                                             }
                                             .onLongPressGesture{
-                                                cards.remove(at: i)
+                                                withAnimation(Animation.linear(duration: 0.5)){
+                                                    deletedCards.append(card)
+                                                    cards.remove(at: i)
+                                                }
                                             }
                                     }
                                 }
@@ -88,20 +92,23 @@ struct DiscoverView: View {
                                             .onTapGesture {
                                                 withAnimation(Animation.spring(response: 0.6, dampingFraction: 0.8)) {
                                                     isshow.toggle()
+                                                    isShow.toggle()
+                                                    card = cards[i];
+                                                    cardDetailID = card.id
                                                     cardDetail = Card_Detail(
+                                                        card: $card,
+                                                        cards: $cards,
+                                                        index: i,
                                                         isshow: $isshow,
-                                                        title: cards[i].title,
-                                                        content: cards[i].context,
-                                                        images: cards[i].image,
-                                                        userimage: cards[i].userimage,
-                                                        username: cards[i].username,
-                                                        location: cards[i].location)
-                                                    cardDetailID = cards[i].id
+                                                        isShow: $isShow)
                                                     
                                                 }
                                             }
                                             .onLongPressGesture{
-                                                cards.remove(at: i)
+                                                withAnimation(Animation.linear(duration: 0.5)){
+                                                    deletedCards.append(card)
+                                                    cards.remove(at: i)
+                                                }
                                             }
                                     }
                                 }
@@ -113,11 +120,12 @@ struct DiscoverView: View {
                 }
             }
         }
+        
     }
 }
 
 struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DiscoverView(cards: Binding.constant([]))
+        DiscoverView(cards: Binding.constant([]), isShow: Binding.constant(true), deletedCards: Binding.constant([]))
     }
 }

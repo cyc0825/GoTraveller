@@ -1,19 +1,18 @@
 //
-//  PostView.swift
+//  EditView.swift
 //  Worldie
 //
-//  Created by 曹越程 on 2023/3/7.
+//  Created by 曹越程 on 2023/4/12.
 //
 
 import SwiftUI
 import PhotosUI
 
-struct PostView: View {
+struct EditView: View {
     @Environment(\.dismiss) var dismiss
-    @State var title: String = ""
-    @State var context: String = ""
     @State var image: [PhotosPickerItem] = []
-    @State var selectedImages: [Image] = []
+    @State var index: Int = 0
+    @Binding var card: Card
     @Binding var cards: [Card]
     var body: some View {
         NavigationView{
@@ -22,7 +21,7 @@ struct PostView: View {
                     Spacer()
                     TextField(
                         "Say something...",
-                        text: $title,
+                        text: $card.title,
                         axis: .vertical
                     )
                     .frame(width: 400, height: 50, alignment: .center)
@@ -32,7 +31,7 @@ struct PostView: View {
                     Spacer()
                     TextField(
                         "Enter More description",
-                        text: $context,
+                        text: $card.context,
                         axis: .vertical
                     )
                     .frame(width: 400, height: 50, alignment: .center)
@@ -43,7 +42,7 @@ struct PostView: View {
                     Spacer()
                     PhotosPicker(selection: $image,
                                  matching: .images){
-                        if(selectedImages.isEmpty){
+                        if(card.image.isEmpty){
                             Image("add")
                                 .resizable()
                                 .frame(width: 400, height: 400)
@@ -51,8 +50,8 @@ struct PostView: View {
                         }
                         else{
                             TabView {
-                                ForEach(0..<selectedImages.count, id: \.self) { i in
-                                    selectedImages[i]
+                                ForEach(0..<card.image.count, id: \.self) { i in
+                                    card.image[i]
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 400, height: 400)
@@ -67,12 +66,11 @@ struct PostView: View {
                     }
                      .onChange(of: image){ _ in
                          Task {
-                             selectedImages.removeAll()
                              for item in image {
                                  if let data = try? await item.loadTransferable(type: Data.self) {
                                      if let uiImage = UIImage(data: data) {
                                          let image = Image(uiImage: uiImage)
-                                         selectedImages.append(image)
+                                         card.image.append(image)
                                      }
                                  }
                              }
@@ -86,8 +84,8 @@ struct PostView: View {
         
         .toolbar{
             ToolbarItem(placement: .navigationBarTrailing){
-                if(selectedImages.isEmpty){
-                    Text("POST")
+                if(card.image.isEmpty){
+                    Text("SAVE")
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
                         .padding(.horizontal,20)
@@ -96,11 +94,10 @@ struct PostView: View {
                 }
                 else{
                     Button{
-                        let card = Card(title: title, context: context, image: selectedImages)
-                        cards.append(card)
+                        cards[index] = card
                         dismiss()
                     } label: {
-                        Text("POST")
+                        Text("SAVE")
                             .foregroundColor(.white)
                             .padding(.vertical, 10)
                             .padding(.horizontal,20)
@@ -113,8 +110,9 @@ struct PostView: View {
     }
 }
 
-struct PostView_Previews: PreviewProvider {
+struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(cards: Binding.constant([]))
+        EditView(card: Binding.constant(Card()), cards: Binding.constant([]))
     }
 }
+

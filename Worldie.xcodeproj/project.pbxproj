@@ -22,6 +22,7 @@
 		D30E14A5297E46A50027586D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30E149B297E46A50027586D /* Card.swift */; };
 		D32E394B2980FCBF0040CBCA /* Card_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32E394A2980FCBF0040CBCA /* Card_Detail.swift */; };
 		D34926BA29BB866A0020A43D /* spaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34926B929BB86690020A43D /* spaceholder.swift */; };
+		D35308F429E7636A00226699 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35308F329E7636A00226699 /* EditView.swift */; };
 		D36AA71729B7D3F60035B2F3 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36AA71629B7D3F60035B2F3 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		D30E149B297E46A50027586D /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D32E394A2980FCBF0040CBCA /* Card_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_Detail.swift; sourceTree = "<group>"; };
 		D34926B929BB86690020A43D /* spaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceholder.swift; sourceTree = "<group>"; };
+		D35308F329E7636A00226699 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D36AA71629B7D3F60035B2F3 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				D30E1499297E46A50027586D /* SubView.swift */,
 				D30E1497297E46A50027586D /* DiscoverView.swift */,
 				D36AA71629B7D3F60035B2F3 /* PostView.swift */,
+				D35308F329E7636A00226699 /* EditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				D30E149C297E46A50027586D /* Tabbar.swift in Sources */,
 				D30E1466297E461B0027586D /* ContentView.swift in Sources */,
+				D35308F429E7636A00226699 /* EditView.swift in Sources */,
 				D30E14A1297E46A50027586D /* DiscoverView.swift in Sources */,
 				D34926BA29BB866A0020A43D /* spaceholder.swift in Sources */,
 				D30E14A3297E46A50027586D /* SubView.swift in Sources */,
@@ -415,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -490,6 +494,7 @@
 				DEVELOPMENT_TEAM = 528US555T2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Worldie/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,6 +517,7 @@
 				DEVELOPMENT_TEAM = 528US555T2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Worldie/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

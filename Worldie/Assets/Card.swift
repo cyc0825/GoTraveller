@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct Card: View {
+struct Card: Identifiable, View {
     // @Binding var UIimage: UIImage?
     var id = UUID()
     var title = ""
     var context = "1"
     var image: [Image] = []
-    var userimage = "dio"
-    var username = "You"
+    // var userimage = "dio"
+    // var username = "You"
     var location = "0 m"
     
     var body: some View {
@@ -28,31 +28,25 @@ struct Card: View {
                     .scaledToFit()
                     .clipped()
             }
-            Text(title)
-                .padding(.horizontal, 3)
-            
             HStack(spacing:3){
-                Image(userimage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .mask(Circle())
-                    .frame(width: 30, height: 30)
-                
-                Text(username)
-                
+                Text(title)
                 Spacer()
                 
                 Image(systemName: "location")
                 Text(location)
             }
-            .font(.footnote)
             .padding(3)
+            .font(.footnote)
         }
         .frame(width: UIScreen.main.bounds.width * 49 / 100)
         .background(Color.white)
         .cornerRadius(10)
     }
 }
+
+
+
+
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {

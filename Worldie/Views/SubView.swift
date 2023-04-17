@@ -10,23 +10,26 @@ import SwiftUI
 struct SubView: View {
     @State var isNotificationEnabled: Bool = false
     @State var distance : Int = 100
+    @Binding var deletedCards: [Card]
+    @Binding var cards: [Card]
     var body: some View {
-        NavigationView{
-            Form {
-                Section(header: Text("Distance Tracking Mode")) {
-                    Toggle(isOn: $isNotificationEnabled) {
-                        Text("Tracking:")
-                    }
-                }
-
-                Section(header: Text("Distance settings")) {
-
-                    Stepper(value: $distance, in: 10...1000) {
-                        Text("Categorize by \(distance) miles")
+        VStack {
+            ScrollView {
+                VStack {
+                    ForEach(0..<deletedCards.count, id: \.self) {i in
+                        HStack {
+                            deletedCards[i]
+                                .onTapGesture {
+                                    self.cards.append(deletedCards[i])
+                                    self.deletedCards.remove(at: i)
+                                }
+                                .onLongPressGesture {
+                                    self.deletedCards.remove(at: i)
+                                }
+                        }
                     }
                 }
             }
-            .navigationTitle(Text("Settings"))
         }
     }
 }
@@ -39,6 +42,6 @@ struct User: Identifiable {
 
 struct SubView_Previews: PreviewProvider {
     static var previews: some View {
-        SubView()
+        SubView(deletedCards: Binding.constant([]), cards: Binding.constant([]))
     }
 }
